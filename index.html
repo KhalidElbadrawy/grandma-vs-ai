@@ -262,6 +262,35 @@ body{background:var(--letterbox);color:var(--ink);font-family:var(--f-display);o
 @keyframes spark{to{transform:translate(var(--dx),var(--dy)) scale(.2);opacity:0}}
 .thought{position:absolute;z-index:22;width:360px;transform:scale(0);transform-origin:10% 100%;transition:transform .5s cubic-bezier(.3,1.6,.5,1)}
 .thought.on{transform:scale(1)}
+
+/* ---- readability pass: solid backings behind text, bigger small text, stronger contrast ---- */
+.logo{background:rgba(42,27,18,.55);padding:18px 46px 16px;border-radius:34px;backdrop-filter:blur(3px)}
+.logo .l2{color:#fff}
+.tagline{background:rgba(42,27,18,.72);padding:8px 30px 10px;border-radius:24px;font-size:30px;text-shadow:none}
+.tagline b{color:var(--gold)}
+.yof{background:rgba(42,27,18,.8)}
+.btn.ghost{background:rgba(42,27,18,.7)}
+.mapnode{width:300px}
+.mapnode .lbl{display:inline-block;white-space:nowrap;background:rgba(42,27,18,.85);padding:6px 16px 8px;border-radius:18px;text-shadow:none;font-size:27px}
+.mapnode .lbl span{color:var(--gold)}
+.banner{background:rgba(30,18,12,.86);padding:26px 50px 30px;border-radius:36px;border:4px solid var(--gold);box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.banner .t1{text-shadow:none;color:var(--glow)}
+.banner .t2{text-shadow:none}
+.banner .t3{text-shadow:none}
+.holo{background:rgba(9,42,49,.94);color:#fff;font-size:21px;backdrop-filter:none}
+.card .ar{font-size:32px;color:#2A1B12}
+.card .en{font-size:25px;color:#4A2E1E}
+.prompt .en{opacity:1;font-size:27px}
+#subs .en{color:#4A2E1E;font-size:27px}
+#subs .ar{font-size:39px}
+.finale-msg{background:rgba(42,27,18,.72);border-radius:36px;padding:22px 30px 26px;width:1240px}
+.finale-msg .m1{font-size:58px;text-shadow:none}
+.finale-msg .m2{text-shadow:none}
+.tag.old{background:rgba(9,42,49,.95)}
+.savehint{font-size:24px;color:#4A2E1E;font-weight:600}
+.field label{font-size:24px}
+#memories{background:rgba(42,27,18,.8)}
+.hbtn{background:rgba(42,27,18,.78)}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 </style>
 
