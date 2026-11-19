@@ -384,8 +384,10 @@ both_g:{s:"S12",ar:"عام أسرة سعيد!",en:"Happy Year of Family!"},
 n4:{s:"N",ar:"مبروك! صرتوا حراس التراث!",en:"Congratulations! You are now Heritage Guardians!"}
 };
 const store={get(k,d){try{const v=localStorage.getItem('gva_'+k);return v==null?d:JSON.parse(v)}catch(e){return d}},set(k,v){try{localStorage.setItem('gva_'+k,JSON.stringify(v))}catch(e){}}};
-const NAMES={s1:store.get('s1','Maryam'),s2:store.get('s2','Hessa')};
-function whoLabel(s){return {N:'الراوي · Narrator',G:'اليدّة نور · Grandma Noor',R:'روبو · ROBO 2050',S1:NAMES.s1,S2:NAMES.s2,S12:NAMES.s1+' & '+NAMES.s2}[s]}
+const NAMES={s1:store.get('s1','Mawada'),s2:store.get('s2','Razan')};
+const AR_NAME={Mawada:'مودة',Razan:'رزان'};
+const nm=n=>AR_NAME[n]?AR_NAME[n]+' · '+n:n;
+function whoLabel(s){return {N:'الراوي · Narrator',G:'اليدّة نور · Grandma Noor',R:'روبو · ROBO 2050',S1:nm(NAMES.s1),S2:nm(NAMES.s2),S12:nm(NAMES.s1)+' & '+nm(NAMES.s2)}[s]}
 const WHO_COLOR={N:'#7B5036',G:'#8A2F43',R:'#168B91',S1:'#E9775C',S2:'#7C6BD6',S12:'#B5822A'};
 
 /* ================= ICONS ================= */
@@ -998,7 +1000,7 @@ function namesPanel(){const p=document.createElement('div');p.className='panel';
  <div class="field"><label for="n1">Older sister · الأخت الكبيرة</label><input id="n1" maxlength="20" value="${NAMES.s1}"></div>
  <div class="field"><label for="n2">Younger sister · الأخت الصغيرة</label><input id="n2" maxlength="20" value="${NAMES.s2}"></div>
  <div class="row-btns"><button class="btn" type="button" id="nSave">Save<small>حفظ</small></button></div>`;stage.appendChild(p);$('#n1').focus();
- $('#nSave').onclick=()=>{NAMES.s1=$('#n1').value.trim()||'Maryam';NAMES.s2=$('#n2').value.trim()||'Hessa';store.set('s1',NAMES.s1);store.set('s2',NAMES.s2);p.remove()}}
+ $('#nSave').onclick=()=>{NAMES.s1=$('#n1').value.trim()||'Mawada';NAMES.s2=$('#n2').value.trim()||'Razan';store.set('s1',NAMES.s1);store.set('s2',NAMES.s2);p.remove()}}
 function start(again){RUN++;document.querySelectorAll('#cert,.panel').forEach(e=>e.remove());fast=false;if(skipLine)skipLine();resetWorld();$('#memories').classList.remove('on');$('#hudBtns').hidden=true;
  $('#iris').style.setProperty('--r','1000px');titleScreen()}
 
